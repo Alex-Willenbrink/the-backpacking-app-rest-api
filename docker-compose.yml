@@ -1,0 +1,8 @@
+version: "3"
+services:
+  express-typescript-server:
+    stdin_open: true
+    tty: true
+    build: .
+    ports:
+      - "3001:3000"

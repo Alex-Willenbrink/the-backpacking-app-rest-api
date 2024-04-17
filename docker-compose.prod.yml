@@ -1,0 +1,6 @@
+version: "3"
+services:
+  express-typescript-server:
+    build: .
+    command: "forever -c ts-node /home/express-typescript-server/src/server.ts"
+    restart: always

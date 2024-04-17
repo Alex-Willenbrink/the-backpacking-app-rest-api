@@ -1,0 +1,25 @@
+{
+    "remotePath": "/home/ubuntu/express-typescript-server/",
+    "host": "192.168.125.75",
+    "username": "ubuntu",
+    "password": "",
+    "port": 22,
+    "secure": true,
+    "protocol": "sftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": "/Users/awillenbrink/Credentials/isis-east.pem",
+    "passphrase": null,
+    "ignore": [
+        "/.vscode",
+        "/.git",
+        "/.DS_Store",
+        "/node_modules"
+    ],
+    "generatedFiles": {
+        "uploadOnSave": false,
+        "extensionsToInclude": [],
+        "path": ""
+    }
+}

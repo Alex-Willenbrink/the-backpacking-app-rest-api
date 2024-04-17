@@ -1,0 +1,7 @@
+{
+    "name": "Express Typescript Server",
+    "version": "0.1.0",
+    "description": "Template express typescript server containing best practices to make setting up a node server the right way, the easy way",
+    "title": "Express Typescript Server API",
+    "url": "http://localhost:3001"
+}

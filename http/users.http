@@ -1,0 +1,7 @@
+@host = http://localhost:3001
+ 
+GET {{host}}/users http/1.1
+
+
+### Second Request
+GET {{host}}
