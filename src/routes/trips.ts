@@ -4,6 +4,44 @@ import { JsonPlaceholderRequest } from "./../utils/request";
 
 const router = Router();
 
+router.get("/published", async (request: Request, response: Response, next) => {
+  try {
+    const items = await database.executeQuery(`
+    select Trip.* from Trip 
+    where Trip.IsPublished = true 
+    order by Trip.CreatedOn desc;
+    `, []);
+
+      response.status(200).json(items);
+  } catch (error) {
+    console.error(error);
+    (response as any).status(500).json({
+      error: error.message
+    });
+  }
+});
+
+router.post("/tags", async (request: Request, response: Response, next) => {
+  const tagIds = request.body.tagIds;
+
+  try {
+    const trips = await database.executeQuery(`
+    select Trip.* from Trip
+    inner join TripTag on TripTag.TripId = Trip.Id
+    where TripTag.Id in (?)
+    and Trip.IsPublished = true
+    group by Trip.Id;
+    `, [tagIds]);
+
+      response.status(200).json(trips);
+  } catch (error) {
+    console.error(error);
+    (response as any).status(500).json({
+      error: error.message
+    });
+  }
+});
+
 router.get("/:tripId", async (request: Request, response: Response, next) => {
     const tripId = request.params.tripId;
     try {
